@@ -2,8 +2,8 @@
     "name": "realsense_multicam",
     "modules": [
       "realsense",
-      "rgbd_processing",
-      "viewers"
+      "@com_nvidia_isaac//packages/rgbd_processing",
+      "@com_nvidia_isaac//packages/viewers"
     ],
     "config": {
       "camera": {

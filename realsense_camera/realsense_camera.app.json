@@ -2,8 +2,8 @@
   "name": "realsense_camera",
   "modules": [
     "realsense",
-    "rgbd_processing",
-    "viewers"
+    "@com_nvidia_isaac//packages/rgbd_processing",
+    "@com_nvidia_isaac//packages/viewers"
   ],
   "config": {
     "camera": {

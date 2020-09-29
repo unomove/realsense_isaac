@@ -14,7 +14,7 @@ isaac_app(
     name = "realsense_camera",
     app_json_file = "realsense_camera.app.json",
     modules = [
-        "@com_nvidia_isaac//packages/realsense",
+        "realsense",
         "@com_nvidia_isaac//packages/rgbd_processing",
         "@com_nvidia_isaac//packages/viewers",
     ],
@@ -24,7 +24,7 @@ isaac_app(
     name = "realsense_multicam",
     app_json_file = "realsense_multicam.app.json",
     modules = [
-        "@com_nvidia_isaac//packages/realsense",
+        "realsense",
         "@com_nvidia_isaac//packages/rgbd_processing",
         "@com_nvidia_isaac//packages/viewers",
     ],
