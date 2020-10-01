@@ -27,11 +27,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 load("@com_nvidia_isaac//engine/build:isaac.bzl", "isaac_http_archive", "isaac_new_local_repository", "isaac_new_git_repository")
+load('@bazel_tools//tools/build_defs/repo:http.bzl', 'http_archive')
 
 def clean_dep(dep):
     return str(Label(dep))
 
 def unomove_workspace():
+
     isaac_http_archive(
         name = "com_google_absl",
         sha256 = "c8ba586a9ab12bc4a67bb419fc0d2146200942b072bac95f50490f977b7fb04f",
@@ -40,6 +42,14 @@ def unomove_workspace():
         licenses = ["@com_google_absl//:COPYRIGHT"],
     )
 
+    isaac_new_git_repository(
+        name = "my_realsense",
+        build_file = clean_dep("//third_party:my_realsense.BUILD"),
+        remote = "https://github.com/IntelRealSense/librealsense.git",
+        commit = "v2.31.0",
+        licenses = ["//:LICENSE"],
+    )
+    
     isaac_http_archive(
         name = "libusb",
         build_file = clean_dep("//third_party:libusb.BUILD"),
@@ -66,10 +76,11 @@ def unomove_workspace():
         licenses = ["https://raw.githubusercontent.com/systemd/systemd/master/LICENSE.LGPL2.1"],
     )
 
-    isaac_new_git_repository(
-        name = "lib_sick_safetyscanner",
-        build_file = clean_dep("//third_party:realsense.BUILD"),
-        remote = "https://github.com/IntelRealSense/librealsense.git",
-        commit = "v2.31.0",
-        licenses = ["//:LICENSE"],
-    )
+    # # Realsense
+    # http_archive(
+    #     name="my_realsense",
+    #     url="https://github.com/IntelRealSense/librealsense/archive/v2.34.0.tar.gz",
+    #     sha256="130e38f759dbe420ef531cf7c1587f50161f4f4de4d3b008f569abd6d404dc23",
+    #     build_file="//third_party:my_realsense.BUILD",
+    #     strip_prefix="librealsense-2.34.0",
+    # )

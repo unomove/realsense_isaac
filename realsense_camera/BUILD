@@ -17,6 +17,7 @@ isaac_app(
         "realsense",
         "@com_nvidia_isaac//packages/rgbd_processing",
         "@com_nvidia_isaac//packages/viewers",
+        "@com_nvidia_isaac//packages/sight",
     ],
 )
 
@@ -27,5 +28,6 @@ isaac_app(
         "realsense",
         "@com_nvidia_isaac//packages/rgbd_processing",
         "@com_nvidia_isaac//packages/viewers",
+        "@com_nvidia_isaac//packages/sight",
     ],
 )

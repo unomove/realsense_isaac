@@ -14,7 +14,7 @@ isaac_component(
     name = "realsense_camera",
     deps = [
         "@com_nvidia_isaac//engine/gems/geometry:pinhole",
-        "@realsense",
+        "@my_realsense//:my_realsense",
     ],
 )
 
